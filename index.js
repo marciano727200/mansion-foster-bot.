@@ -4,7 +4,17 @@ const qrcode = require('qrcode-terminal');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        headless: true,
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-accelerated-2d-canvas',
+            '--no-first-run',
+            '--no-zygote',
+            '--single-process',
+            '--disable-gpu'
+        ]
     }
 });
 
@@ -32,7 +42,7 @@ client.on('message', async (message) => {
 ┃
 ╰━━━━━━━━━━━━━━━━━━━⬣
 
-💡 *SI NECESITAS SERVICIOS DE ALGUN JUEGO O SERVICIO QUE NO VEAS PREGUNTA POR FAVOR*
+💡 *SI NECESITAS SERVICIOS DE ALGUN JUEGO O SERVICIO QUE NE VEAS PREGUNTA POR FAVOR*
 
 💳 .pago (NUESTRO MÉTODO DE PAGO)`;
 
