@@ -4,7 +4,7 @@ const qrcode = require('qrcode-terminal');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        executablePath: process.env.CHROME_PATH || undefined,
+        headless: true,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -13,13 +13,14 @@ const client = new Client({
             '--no-first-run',
             '--no-zygote',
             '--single-process',
-            '--disable-gpu'
+            '--disable-gpu',
+            '--disable-software-rasterizer'
         ]
     }
 });
 
 client.on('qr', (qr) => {
-    console.log('Escanea este código QR con tu WhatsApp:');
+    console.log(' Escanea este código QR con tu WhatsApp:');
     qrcode.generate(qr, { small: true });
 });
 
@@ -149,7 +150,7 @@ ENTREGA DE 1 A 72 HORAS
     } 
     else if (texto === '.stock3') {
         const stock3Text = 
-`🐢 𝑫𝑰𝑨𝑴𝑨𝑵𝑻𝑬𝑺 𝟏 𝑽𝑬𝒁 𝑿 𝑰𝑫 🐢 
+`🐢 𝑫𝑰𝑨𝑴𝑨𝑵𝑻𝑬𝑺 𝟏 𝑽𝑬𝑁 𝑿 𝑰𝑫 🐢 
 _Mandar id para verificar_ 
 
 ꕥ 341 diamantes | $43 mxn 
