@@ -4,7 +4,7 @@ const qrcode = require('qrcode-terminal');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-        headless: true,
+        executablePath: process.env.CHROME_PATH || undefined,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -42,7 +42,7 @@ client.on('message', async (message) => {
 ┃
 ╰━━━━━━━━━━━━━━━━━━━⬣
 
-💡 *SI NECESITAS SERVICIOS DE ALGUN JUEGO O SERVICIO QUE NE VEAS PREGUNTA POR FAVOR*
+💡 *SI NECESITAS SERVICIOS DE ALGUN JUEGO O SERVICIO QUE NO VEAS PREGUNTA POR FAVOR*
 
 💳 .pago (NUESTRO MÉTODO DE PAGO)`;
 
